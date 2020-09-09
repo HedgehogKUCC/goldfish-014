@@ -24,6 +24,39 @@ body {
   padding: 50px 0;
   box-sizing: border-box;
   box-shadow: 5px 0 10px hsla(240, 40%, 10%, .6);
+  position: relative;
+  transform: translateX(-100%);
+  transition: .5s;
+}
+
+.sideMenu label {
+  position: absolute;
+  width: 40px;
+  height: 80px;
+  background: #000;
+  color: #ffffff;
+  top: 0;
+  right: -40px;
+  bottom: 0;
+  margin: auto;
+  line-height: 80px;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 0 10px 10px 0;
+}
+
+#sideMenuSwitch {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+#sideMenuSwitch:checked + .sideMenu {
+  transform: translateX(0);
+}
+
+#sideMenuSwitch:checked + .sideMenu .fa-angle-right {
+  transform: scaleX(-1);
 }
 
 .sideMenu form {
